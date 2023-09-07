@@ -1,0 +1,24 @@
+---
+layout: post
+title: What's a Binary Selector?
+date: 2007-05-06 22:35:33.000000000 -07:00
+categories:
+- smalltalk
+tags: []
+permalink: "/2007/05/06/whats-a-binary-selector/"
+---
+<p>Intuitively, binary selectors are obvious---you string together a few funky characters and you have yourself a binary selector. And binary selectors can useful for making some things easier to read. At least that's the theory, and reading the ANSI standard one might assume everything is exactly that clear. The practice in Smalltalk-80 descendants is different.</p>
+<p>To begin with, Smalltalk-80 only allowed two characters in a binary selector, ruling out beauties such as &lt;=&gt;, &lt;+&gt; or &gt;&gt;=. Fortunately, the ANSI standard has dropped this limit, and Squeak also allows selectors of more than two characters. VisualWorks, however, still sticks to the old ways.</p>
+<p>Then there is the wrench negative number literals throw in the works. Intuitively, <code>3&nbsp;&ndash;&ndash;&nbsp;4</code> is supposed to send the #-- message to 3---and probably cause an MNU. Indeed, that is what would happen in an ANSI-compliant Smalltalk. Instead, Squeak will happily parse and evaluate the above to 7, while VisualWorks will throw a compiler error saying that an argument is expected following the first minus.</p>
+<p>Here is why that is. A negative number literal in Smalltalk-80 is simply a minus token followed by a number token. Squeak still sticks to that interpretation, and so it sees no difference between <code>"-4"</code> and <code>"-&nbsp;&nbsp;4"</code>. Both are valid forms of writing a negative four. ANSI and VisualWorks have since moved to a less quirky behavior treating the minus as part of the literal number token. Interestingly, the cute syntax diagrams at the end of the Blue Book suggest Smalltalk-80 does the same, but evaluating <code>"-&nbsp;&nbsp;4"</code> shows that it doesn't.</p>
+<p>But wait, before the second minus in <code>"3&nbsp;&ndash;&ndash;&nbsp;4"</code> got attached by Squeak to the number that follows, why did it get detached from the first one to begin with?</p>
+<p>And here lurks another feature. This time it is in fact documented by the cute syntax diagrams. A binary selector is made of special characters, but a minus is a special case of a special character. It's only allowed once, and only as the first character of a binary selector. So, <code>-</code>, <code>-&gt;</code> or <code>-+</code> are legal, <code>+-</code>, <code>&lt;-</code> or <code>--</code> are not. Clearly, the point of this feature was to have "3+-4" or "3&ndash;&ndash;4" parse "sensibly" as arithmetic expressions rather than exotic message sends.</p>
+<p>This also explains why VisualWorks treats "3&nbsp;&ndash;&ndash;&nbsp;4" as an error. It switched from the classical treatment of a minus before a literal to a more modern (or at least compliant with the Blue Book syntax diagrams) treatment, so it doesn't see the second minus as belonging to the 4 that follows---but it still refuses to accept "&ndash;&ndash;" as a valid binary selector, hence the error. Strange, that.</p>
+<p>And that's not the end of it. The problem with a minus is that the grammar uses it for two purposes---as part of a number literal and also as part of a selector. Another character just like that is a vertical bar. "foo || bar" doesn't work in Squeak and VisualWorks. And it never did, going as far back as Smalltalk-80 again.</p>
+<p><img src="{{ site.baseurl }}/assets/images/2007/05/3barbar4.gif" alt="3 || 4" /></p>
+<p>This time the scanner doesn't even try to be nice. A vertical bar  always parses as a separate token, so anything like  || or |&gt; is treated by the scanner as a sequence of two tokens and then rejected by the parser as invalid syntax. So in fact the only legal binary selector with a vertical bar is the vertical bar itself. (This again is contrary to what the Blue Book claims Smalltalk-80 recognizes as a binary selector).</p>
+<p>All that was perhaps way too much nit-picking as far as any practical programming is concerned, but I find two things interesting about this situation.</p>
+<p>One is that the Blue Book misrepresents the grammar of the actual implementation, and not once but twice. The version in the book is probably more of what the authors <em>wanted</em> the grammar to be, rather than an accurate documentation of the ad-hoc implementation in the image. Maybe this was why one of these quirks later got fixed in the ParcPlace branch of the family.</p>
+<p>The second interesting point is why is this such a minor issue? How many people in the past 25 years have actually <em>wanted</em> to write "foo || bar" or "foo &lt;- bar" and discovered they didn't work? Do Smalltalkers use binary messages creatively---that is, outside (semi-)traditional math, concatenation and point creation? And if, as it seems, they do not---
+why?
+

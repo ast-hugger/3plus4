@@ -1,2 +1,2 @@
 # 3plus4
-The nighborhood of 7
+The neighborhood of 7

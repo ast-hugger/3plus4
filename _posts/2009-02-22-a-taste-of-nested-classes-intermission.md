@@ -8,7 +8,7 @@ categories:
 tags: []
 permalink: "/2009/02/22/a-taste-of-nested-classes-intermission/"
 ---
-(Continues from [part 3](/2009/02/15/a-taste-of-nested-classes-part-3/))
+(Continues from [part 3](/3plus4/2009/02/15/a-taste-of-nested-classes-part-3/))
 
 This post is an intermission because it's not specifically about nested classes. In fact, it's not about anything that really exists in Newspeak. Instead, it reviews a few hypothetical examples to show off some of the expressive capabilities of implicit receiver sends.
 
@@ -116,5 +116,5 @@ The last two examples, `super` and `outer`, are even more hypothetical than the 
 
 Also, this scheme in general leaves the meaning of things like `self` or `nil` open to changes by a class for all its subclasses and nested classes. Perhaps there is such a thing as too much flexibility. But even if these ideas are too much or too expensive for the core language, all of the same mechanisms are available to a designer of an internal DSL, and that's what makes them interesting. For example, the "dispatcher receiver" pattern illustrated with `super` and `outer` was conceived in Hopscotch and used there to support [NewtonScript](http://waltersmith.us/wp-content/uploads/2005/12/OOPSLA95.pdf)-like object hierarchy-bound message dispatch.
 
-(Continues in [part 4](/2009/03/08/a-taste-of-nested-classes-part-4/)).
+(Continues in [part 4](/3plus4/2009/03/08/a-taste-of-nested-classes-part-4/)).
 

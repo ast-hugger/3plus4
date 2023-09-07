@@ -7,7 +7,7 @@ categories:
 tags: []
 permalink: "/2009/03/08/a-taste-of-nested-classes-part-4/"
 ---
-(Continues from the [intermission](/2009/02/22/a-taste-of-nested-classes-intermission/))
+(Continues from the [intermission](/3plus4/2009/02/22/a-taste-of-nested-classes-intermission/))
 
 <p>In the previous examples I sometimes referred to the familiar Smalltalk library classes such as OrderedCollection as if it were the most natural thing to do. But what does something like</p>
 <pre class="smalltalk">

@@ -77,5 +77,5 @@ If the Game class has additional instances (one such instance is shown small in 
 
 The diagram also illustrates a concept that will be central to the next part of this series: the _enclosing object_. In terms of our example, an enclosing object of an asteroid (instance) is the game (instance) that owns the class (metaobject) of the asteroid. This relationship is obviously quite important and useful: simply put, it means that an asteroid knows what game it is a part of. That's simply by virtue of nesting the Asteroid class definition inside Game, without having to explicitly set up and maintain a back pointer from an asteroid to its game.
 
-(Continues in [part 2](/2008/12/07/a-taste-of-nested-classes-part-2/)).
+(Continues in [part 2](/3plus4/2008/12/07/a-taste-of-nested-classes-part-2/)).
 

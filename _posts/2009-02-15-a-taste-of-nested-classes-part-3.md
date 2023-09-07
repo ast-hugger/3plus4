@@ -7,7 +7,8 @@ categories:
 tags: []
 permalink: "/2009/02/15/a-taste-of-nested-classes-part-3/"
 ---
-<p>(Continues from <a href="http://blog.3plus4.org/2008/12/07/a-taste-of-nested-classes-part-2/">part 2</a>).</p>
+(Continues from [part 2](/2008/12/07/a-taste-of-nested-classes-part-2/))
+
 <p>After an unplanned hiatus caused by various real life issues including <a href="http://gbracha.blogspot.com/2008/11/we-have-good-news-and-we-have-bad-news.html">the irritating surprise of becoming unemployed</a> in these interesting times, here is the long-promised third part of the nested classes series.</p>
 <p>Class nesting in our earlier example represented the natural nesting relationship of an asteroid object inside the game that contained it. Implicit receiver sends were a convenient mechanism of communicating with the game from inside an asteroid instance "for free", without the need to maintain an explicit object reference. Today we look at a few examples with implicit sends of a slightly different flavor. </p>
 <p>In a typical Smalltalk system, methods in the Object class define the behavior common to all objects. Some of them, such as <code>class</code> or <code>identityHash</code> are implemented to return some interesting information extracted from the receiver. Others, such as <code>isNil</code> are overridden in subclasses to vary their behavior polymorphically, again depending on the receiver object. In both of these cases, the receiver is involved one way or the other.</p>
@@ -86,5 +87,5 @@ return: value <Object> if: selector <Symbol> notUnderstoodIn: block <[]> = (
 
 To sum up, some methods define the kind of ambient functionality that is used throughout an application. For that reason it's best if it can be accessed implicitly, without arranging for an explicit reference to the object that provides it. In classic Smalltalk, the only mechanism to support that is inheritance, with the disadvantage that the functionality defined this way escapes the defining module. Nested classes and implicit receiver sends in Newspeak provide an alternative mechanism that keeps such ambient operations contained inside the module.
 
-(Continues in [intermission](http://blog.3plus4.org/2009/02/22/a-taste-of-nested-classes-intermission/)).
+(Continues in [intermission](/2009/02/22/a-taste-of-nested-classes-intermission/)).
 

@@ -7,7 +7,8 @@ categories:
 tags: []
 permalink: "/2009/03/08/a-taste-of-nested-classes-part-4/"
 ---
-<p>(Continues from the <a href="http://blog.3plus4.org/2009/02/22/a-taste-of-nested-classes-intermission/">intermission</a>).</p>
+(Continues from the [intermission](/2009/02/22/a-taste-of-nested-classes-intermission/))
+
 <p>In the previous examples I sometimes referred to the familiar Smalltalk library classes such as OrderedCollection as if it were the most natural thing to do. But what does something like</p>
 <pre class="smalltalk">
 OrderedCollection with: 'foo'

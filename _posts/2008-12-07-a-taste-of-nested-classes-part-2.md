@@ -7,7 +7,8 @@ categories:
 tags: []
 permalink: "/2008/12/07/a-taste-of-nested-classes-part-2/"
 ---
-<p>(Continues from <a href="http://blog.3plus4.org/2008/12/04/a-taste-of-nested-classes-part-1/">part 1</a>)</p>
+Continues from [part 1](/2008/12/04/a-taste-of-nested-classes-part-1/)
+
 <p>Let's now look at some message sends. Suppose we design the application so that the message <code>respondToHit</code> is sent to an asteroid when it's hit by a missile. In Smalltalk, a typical response would look something like</p>
 <pre class="smalltalk">
 respondToHit
@@ -76,5 +77,5 @@ In nested Newspeak classes, a child calls onto the functionality provided by the
 
 If this sounds somewhat vague, I hope some of the more realistic examples in the next part will help clarify this point.
 
-Continues in [part 3](http://blog.3plus4.org/2009/02/15/a-taste-of-nested-classes-part-3/).
+Continues in [part 3](/2009/02/15/a-taste-of-nested-classes-part-3/).
 

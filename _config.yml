@@ -21,7 +21,7 @@
 title: 3 + 4
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  My old blog most about Newspeak and Smalltalk matter, originally located at blog.3plus4.org.
+  The neighborhood of 7. My old blog mostly about Newspeak and Smalltalk matters, originally located at blog.3plus4.org.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

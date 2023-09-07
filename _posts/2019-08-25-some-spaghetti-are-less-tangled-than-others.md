@@ -173,5 +173,5 @@ are simply a combination of these two scenarios.
 
 Could a six year old understand this? Mine couldn't. But in any case, refactoring continuations-based code builds character and makes one a better person. I think it was Einstein who said that.
 
-[The full source with sugar and examples](https://gist.github.com/vassilibykov/79738ad20d24fff826854268da44078d)
+[The full source with sugar and examples](https://gist.github.com/ast-hugger/79738ad20d24fff826854268da44078d)
 

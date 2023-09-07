@@ -10,9 +10,11 @@ permalink: "/2008/09/13/a-taste-of-implicit-receivers/"
 One of the features that distinguish Smalltalk from most other languages is the keyword message syntax, and one of those that distinguish Newspeak from Smalltalk are implicit receivers. They work very nicely together to allow writing very readable code. Here is a drag-and-drop related method I just wrote:
 
 ```
-**createDropTargetFor: session \<DragDropSession\> ^\<DropTarget\> = (**^if: session source
-		isMovingMyItem: [createDropTargetForItemMove]
-		otherwise: [createClientSuppliedDropTargetFor: session]**)**
+createDropTargetFor: session <DragDropSession> ^<DropTarget> = (
+  ^if: session source
+      isMovingMyItem: [createDropTargetForItemMove]
+      otherwise: [createClientSuppliedDropTargetFor: session]
+)
 ```
 
 What we have here is a method with the selector createDropTargetFor:. The things in angle brackets are type annotations--essentially, optional structured comments telling the reader what the method expects and returns. Unlike Smalltalk, the body of the method is explicitly delimited by "=(" and ")".

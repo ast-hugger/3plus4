@@ -9,7 +9,7 @@ permalink: "/2008/11/23/brazil-example-a-classic-smalltalk-browser/"
 ---
 <p>Here is an example of a classic Smalltalk browser implemented in Brazil. While the main point here is to illustrate Brazil API, an important related point I want to make first is that in our system Brazil is <em>not</em> used the way this example shows (and neither do our browsers look like that).</p>
 <p>A good analogy to Brazil's role in our UI is assembly language. One can program in it directly, but most of us these days  don't do that on any significant scale. In the same vein, one can think of Brazil as the UI assembly language. <a href="http://blog.3plus4.org/2008/06/20/which-is-which-in-newspeak-ui-hopscotch/">Earlier</a> I described Hopscotch as an application framework, but that was simply to associate it with something familiar to everyone. In reality, Hopscotch is more of a higher-level UI language that hides or recasts in a different form the details of the low-level language it is based on. And just like one usually isn't concerned with the exact translation of a high-level language program into machine code, a Hopscotch programmer doesn't work with Brazil API directly. </p>
-<p>[caption id="attachment_76" align="alignright" width="150" caption="What it looks like"]<a href="http://blog.3plus4.org/wp-content/uploads/2008/11/classicbrowser.png"><img src="{{ site.baseurl }}/assets/images/2008/11/classicbrowser-150x150.png" alt="The picture of the browser." title="ClassicBrowser" width="150" height="150" class="size-thumbnail wp-image-76" /></a>[/caption]</p>
+<p><a href="http://blog.3plus4.org/wp-content/uploads/2008/11/classicbrowser.png"><img src="{{ site.baseurl }}/assets/images/2008/11/classicbrowser-150x150.png" alt="The picture of the browser." title="ClassicBrowser" width="150" height="150" class="size-thumbnail wp-image-76" /></a></p>
 <p>In the example, we create a window with the usual four list boxes and a text view, and wire them up so that list selection works the way it works in Smalltalk. The screenshot shows the browser open as a native Vista UI, and browsing the Object class from Squeak. The window in the background is the Newspeak workspace with the expression I used to instantiate and open the browser. The part in parentheses has to do with class nesting and the use of nested classes to implement modules. If you haven't followed one of Gilad's explanations, feel free to ignore the parenthesised part for the purposes of this example. The remainder,</p>
 <pre class="smalltalk">
 ClassicBrowser new open
@@ -80,8 +80,8 @@ configureUI = (
 	configureCodeView.
 )
 </pre>
-<p>Everything is straightforward here (again, we are freely using implicit receiver sends to avoid the clutter of "self" everywhere). Here is just one of the individual configuration methods---
-others are similar:
+<p>Everything is straightforward here (again, we are freely using implicit receiver sends to avoid the clutter of "self" everywhere). Here is just one of the individual configuration methods--
+others are similar:</p>
 
 ```
 configureCategoryList = (

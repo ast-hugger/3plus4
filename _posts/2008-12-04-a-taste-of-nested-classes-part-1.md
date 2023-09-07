@@ -24,7 +24,7 @@ Game new
 <p>and get an instance of Game.</p>
 <p>I want to emphasize right away that despite what this example may suggest, <em>Newspeak has no global namespace for top-level classes</em>. This availability of Game as a global variable in Smalltalk alongside the regular Smalltalk classes is the scaffolding, useful here to write examples in plain Smalltalk to keep things more familiar for the time being.</p>
 <p>So what about Asteroid---how could we instantiate that one? Nesting a class in another essentially adds a slot to the outer class definition, with an accessor to retrieve the value of the slot. That value is the metaobject of the inner class. So, we get an inner class (metaobject) by sending a message to <em>an instance of</em> its outer class (metaobject). Notice that it's not "by sending a message to the outer class"---
-"an instance of" is an important difference:
+"an instance of" is an important difference:</p>
 
 ```
 game := Game new.

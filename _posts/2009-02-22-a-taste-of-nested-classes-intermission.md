@@ -89,16 +89,16 @@ With this, most of the reserved words of Smalltalk become regular messages. The 
 now really means
 
 ```
-^Ïƒ self foo: Ïƒ nil
+^? self foo: ? nil
 ```
 
-with Ïƒ denoting a reference to (usually!) the receiver unrepresentable in the language syntax. We use the fact that an empty method effectively reads as
+with ? denoting a reference to (usually!) the receiver unrepresentable in the language syntax. We use the fact that an empty method effectively reads as
 
 ```
-^Ïƒ
+^?
 ```
 
-to grab that elusive Ïƒ in the `self` method.
+to grab that elusive ? in the `self` method.
 
 `super` is more complicated because it doesn't denote a separate object but rather `self` with a special mode of message lookup. However, even that can be lifted from language magic into a reflective implementation at the library level:
 

@@ -51,8 +51,8 @@ anObject
 [:ann | self processAnnouncement: ann]</pre>
 <p>but arguably the block isn't quite as succinct as the equivalent section. So, what does this buy us?</p>
 <p>Of course, we simplify the API. There is now only one subscription message instead of two. What was a separate case becomes part of the same mechanism.</p>
-<p>The implementation is also simpler. In the original we needed to remember the receiver and the selector to send to it. (The block case is handled by remembering the block as the receiver and setting the selector to <code>#value:</code>---
-granted, I'm simplifying the Announcements picture a little, but as I said my example is only an adaptation). Once we throw out separate support for the receiver-selector case, all we do is remember the block and evaluate it when needed.
+<p>The implementation is also simpler. In the original we needed to remember the receiver and the selector to send to it. (The block case is handled by remembering the block as the receiver and setting the selector to <code>#value:</code>--
+granted, I'm simplifying the Announcements picture a little, but as I said my example is only an adaptation). Once we throw out separate support for the receiver-selector case, all we do is remember the block and evaluate it when needed.</p>
 
 There even is a potential performance improvement. The receiver-selector implementation always sends `#perform:with:` to the receiver to deliver an announcement, even for those subscriptions that use a block. The simplified implementation instead evaluates the block to set things in motion, and `#perform:with:` only enters the picture together with sections in those cases where we specifically want a receiver-selector option.
 

@@ -80,8 +80,8 @@ gameScreen openWindow.
 <pre class="smalltalk">
 platform Collections OrderedCollection.
 </pre>
-<p>the platform's <code>doesNotUnderstand:</code> method kicks in and retrives the standard Smalltalk OrderedCollection, making sure it is indeed part of the Collections package. Again, this is a temporary bootstrapping hack and not the final idea---
-though even as a hack it illustrates the power of modularity based on late-bound message sends.
+<p>the platform's <code>doesNotUnderstand:</code> method kicks in and retrives the standard Smalltalk OrderedCollection, making sure it is indeed part of the Collections package. Again, this is a temporary bootstrapping hack and not the final idea--
+though even as a hack it illustrates the power of modularity based on late-bound message sends.</p>
 
 For the final idea, see Gilad's post about [living without global namespaces](http://gbracha.blogspot.com/2008/12/living-without-global-namespaces.html). Combined with the ability to serialize and deserialize objects (and module instances are objects too), this ability to mix and link different modules has many exciting uses. Here are just a couple of scenarios.
 

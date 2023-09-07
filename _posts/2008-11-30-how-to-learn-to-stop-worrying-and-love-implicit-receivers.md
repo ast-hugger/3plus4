@@ -8,7 +8,7 @@ tags: []
 permalink: "/2008/11/30/how-to-learn-to-stop-worrying-and-love-implicit-receivers/"
 ---
 <p>I remember a thread on squeak-dev sometime in summer 2007 discussing implicit self as a hypothetical feature for Smalltalk. Back then we were not yet talking about Newspeak, and so I held my peace. But not forever---
-Andres recently wrote [a blog post about the same thing](http://blogten.blogspot.com/2008/11/on-implicit-self.html), with a good summary of most of the same points I remember from the thread. This time Newspeak is known out there and explicitly mentioned in the post, so it's a good chance to offer an alternative view and correct some misconceptions.
+Andres recently wrote [a blog post about the same thing](http://blogten.blogspot.com/2008/11/on-implicit-self.html), with a good summary of most of the same points I remember from the thread. This time Newspeak is known out there and explicitly mentioned in the post, so it's a good chance to offer an alternative view and correct some misconceptions.</p>
 
 Here is the most important one. Quoting from Andres' post:
 
@@ -64,5 +64,5 @@ And the final point. There's much to be said about the human nature and the tend
 
 **Update:**
 
-[Peter AhÃ©](http://digital-sushi.org/) pointed out offline that I didn't mention another important property facilitated by implicit receivers in Newspeak as well as in Self: [representation independence](http://gbracha.blogspot.com/2007/01/representation-independent-code.html).
+[Peter Ahé](http://digital-sushi.org/) pointed out offline that I didn't mention another important property facilitated by implicit receivers in Newspeak as well as in Self: [representation independence](http://gbracha.blogspot.com/2007/01/representation-independent-code.html).
 

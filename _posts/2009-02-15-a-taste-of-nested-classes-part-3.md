@@ -43,7 +43,7 @@ class AsteroidsGame = (...)
 )
 </pre>
 <p>We put <code>logError:</code> in the top-level class representing our application. Any method of any nested class can invoke that utility through an implicit receiver send. The superclass of the nested class doesn't matter---
-the utility is accessible because the class is nested in the one that provides it. Compared to the Smalltalk example, the utility is now available everywhere in our application and nowhere outside of it.
+the utility is accessible because the class is nested in the one that provides it. Compared to the Smalltalk example, the utility is now available everywhere in our application and nowhere outside of it.</p>
 
 Here is another thing that's interesting about the Newspeak alternative. In Smalltalk, `logError:` would have to be an extension method of Object. Extension methods are [officially ungood](http://gbracha.blogspot.com/2008/03/monkey-patching.html) in Newspeak, and the example shows the goodthink alternative.
 
